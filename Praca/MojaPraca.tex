@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{cite}
+
+\bibliographystyle{plain}
+
+\title{Modelovanie v obrannom priemysle}
+
+\author{Oleksandr Nadein\\[2pt]
+	{\small Slovenská technická univerzita v Bratislave}\\
+	{\small Fakulta informatiky a informačných technológií}\\
+	{\small \texttt{xnadein@stuba.sk}}
+	}
+
+\date{\small October 2021}
+
+\begin{document}
+
+\maketitle
+
+\noindent\rule{12cm}{0.4pt}
+
+
+\tableofcontents
+
+\newpage
+\section{Uvod}
+
+\large Ľudia bojovali počas svojej histórie a ľudstvo bohužiaľ nikdy neexistovalo bez konfliktov. Vojenský priemysel sa neustále rozvíja, niekedy až fraškovitým tempom, ktorému sa hovorí „preteky v zbrojení“. Aj v našej dobe existujú určité preteky v zbrojení o vytvorenie zbraní, ktoré nebudú potrebovať človeka ako pilota a jeho ovládanie. 
+
+Hlavné krajiny vyrábajúce zbrane na svete teraz pracujú na vývoji najrôznejších robotov a dronov. Dôležitým cieľom vývoja týchto zbraní je eliminovať ľudský faktor a nestratiť účinnosť v porovnaní s existujúcimi zbraňami. Cieľom mojej práce je priblížiť vám vývoj a modelovanie tohto typu zbraní. Softvér je nevyhnutnou súčasťou každej bezpilotnej výzbroje, a preto je jeho vývoj a simulácia v popredí.
+
+\newpage
+
+\subsection{Co je modelovanie?}
+
+\cite{Hana2019}Modelovanie je metóda reprodukovania a skúmania určitého fragmentu reality (objektu, javu, procesu, situácie) alebo jeho riadenia, založená na reprezentácii objektu pomocou jeho kópie alebo podobnosti – modelu. Model zvyčajne predstavuje buď hmotnú kópiu originálu, alebo nejaký konvenčný obraz prezentovaný v abstraktnej (mentálnej alebo symbolickej) forme a obsahujúci podstatné vlastnosti modelovaného objektu. Postupy tvorby modelov sú široko používané vo vedecko-teoretickej aj aplikovanej sfére ľudskej činnosti.
+
+V mojej práci hovoríme o modelovom softvéri a softvéri pre projekty vojenských dronov, takže aspektov „materiálového“ modelovania sa nedotkneme.
+
+Vývojári moderných informačných systémov neustále čelia zvyšovaniu ich komplexnosti. Je to spôsobené nárastom počtu požiadaviek na systémy, používaním komplexnejších architektonických riešení a v dôsledku toho aj nárastom množstva programového kódu. Za týchto podmienok vývoj systému priamym prechodom od požiadaviek k programovaniu vedie k obrovskému množstvu chýb, v dôsledku ktorých takéto projekty zvyčajne zostávajú nedokončené.\cite{8109257} Teraz je už každému celkom jasné, že vytváranie moderných softvérových systémov je nemožné bez prístupu založeného na modeloch.
+
+\subsection{Ako priebeha modelovanie v obrannom priemysle}
+
+\cite{Klaus}Na začatie akéhokoľvek modelovania vo svete je potrebné použiť určité metódy výskumu, vo vojenských záležitostiach sú hlavnými metódami vojensko-teoretický alebo vojensko-technický výskum objektu štúdiom jeho analógov pre možnosť nahradenia a výberu existujúcich analógov. V porovnaní s konvenčným modelovaním je potrebné vziať do úvahy obrovské množstvo vonkajších faktorov, pretože konečným cieľom je, aby sa model dal použiť pri vedení nepriateľských akcií. Jedným z hlavných spôsobov je spustenie projektu vo fáze vývoja prostredníctvom niekoľkých simulovaných situácií, kde sa analyzuje, ako sa bude model správať a či bude zvládať danú úlohu, až po absolvovaní všetkých počítačových testov sa softvérový model načíta do dron na praktické testy.
+
+\newpage
+
+\section{Rozvoj modelovania v obrannov priemysle}
+
+V prvom rade pri navrhovaní modelov, vývoji systémových a softvérových riešení vychádzame z cieľového nastavenia modelovania, funkčného účelu a miesta modelov v systéme podpory rozhodovania. Uvedomujúc si, že samotný model nemôže zabezpečiť vypracovanie jediného správneho a komplexne odôvodneného rozhodnutia v konkrétnych podmienkach situácie, ale je len nástrojom na podporu duševnej a tvorivej činnosti veliteľov, veliteľov a štábnych funkcionárov. A to je celkom rozumné. Je dobre známe, že plánovanie akejkoľvek operácie alebo bitky je stelesnením vojenského umenia veliteľa alebo taktického výcviku veliteľa spolu s ich schopnosťou individuálne, na základe svojich skúseností a intuície, urobiť najvhodnejšie rozhodnutie podmienky situácie. \cite{8612752}Model je v tomto prípade pomocným nástrojom na podporu tohto procesu a posúdenie možných alternatív. Je to spôsobené tým, že matematický aparát a v ňom implementované algoritmy pokrývajú množstvo zložitých procesov, faktorov a podmienok, ktoré priamo ovplyvňujú výsledky simulácie. Niektoré z nich sú stanovené kvantitatívne, napríklad bojová a početná sila súperiacich skupín
+vojsk, druhy a vlastnosti zbraní a vojenskej techniky, pridelené zdroje, fyzikálne, geografické a meteorologické podmienky a pod. Druhú časť východiskových údajov z objektívnych príčin nemožno v modeli kvantifikovať a zohľadniť, pretože ovplyvňujú kognitívnu sféru človeka a jeho morálku. Preto sa dnes pri simulácii bojových akcií berú do úvahy len formálne údaje.
+
+Štrukturálne vám tento prístup umožňuje vytvoriť „bipolárny“ model, ktorý zahŕňa dve konkurenčné riadiace centrá reprezentované súkromnými modelmi na niekoľkých úrovniach správy. Ako tu vidíte, do popredia sa nedostáva „materiálna zložka vojny“, ale produkty vedomia a vôle veliteľov a veliteľov, konkrétne prijaté rozhodnutia a úlohy, ktoré sú jednotkám pridelené.
+
+\begin{figure}[h]
+
+\centering
+
+\includegraphics[scale=0.2]{Modelovanie.pdf}
+
+\caption{Schéma bojovej simulácie}
+
+\label{fig:mpr}
+
+\end{figure}
+
+Na schéme môžete vidieť príklad simulácie vojenských operácií medzi oboma stranami, samozrejme, do úvahy sa berie aj rozdiel v teréne, dennej dobe a roku. Táto simulácia sa vykonáva ešte pred vytvorením modelu dronového programu, aby sa určili jeho bojové úlohy a ako sa dá efektívne využiť. 
+
+\subsection{Modelovanie dronového programu v boji}
+
+Nabudúce...
+
+\subsection{Rôzne metódy modelovania v krajinách a vojenských alianciách}
+
+Nabudúce...
+
+\newpage
+
+\section{Zaver}
+
+Simulačný softvér pre drony a vojnu sa vyvíja spolu s technológiou, pretože každá krajina chce získať ekonomickú a vojenskú výhodu. Vo svojej práci som skúmal metódy a implementáciu softvérového modelovania v armádach sveta, pričom som ukázal názorné príklady diagramov, ktoré sa dnes používajú.
+
+Bude doplnená...
+
+\newpage
+
+\section{Literatura}
+
+\bibliography{literatura.bib}
+
+
+\end{document}
